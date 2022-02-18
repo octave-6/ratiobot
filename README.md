@@ -1,6 +1,6 @@
 # Ratiobot
 
-## A very simple, yet effective bot
+### A very simple, yet effective bot
 
 Ratiobot is a quick foray into the twitter API.
 
@@ -13,7 +13,7 @@ every block of code I felt needed clarification. This will allow me to reference
 
 ---
 
-## Use to send a message to friends who deserve consistent ratios.
+### Use to send a message to friends who deserve consistent ratios.
 
 The easy readability allows easy quick and easy adjustment to the code.
 
