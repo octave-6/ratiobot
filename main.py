@@ -57,7 +57,9 @@ class Stalker(tweepy.Stream):
                 api.create_favorite(status.id)
                 time.sleep(1)
                 print('wordle ratio sent')
-
+            
+            # Add elif conditions here to further personalize your ratio experience
+            
             else:
                 rand = random.randint(0,19)
                 ratio = api.update_status(f'@{status.user.screen_name} {ratio_list[rand]}', in_reply_to_status_id=status.id)
