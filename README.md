@@ -10,7 +10,7 @@ and become comfortable with the Stream class from the tweepy library.
 
 I have attempted to make this code as easy to read as possible, with plenty of  
 clear and concise comments to explain every block of code I felt needed clarification.  
-This will allow me to reference this mini-project in the future  
+This will allow me to reference this mini-project in the future with ease.   
 
 ---
 
