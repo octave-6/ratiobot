@@ -25,7 +25,7 @@ class Stalker(tweepy.Stream):
         Allows me to ensure bot connected A-Okay,
         Plus bonus meme Ricardo to warm my heart
         '''
-        print('...::Stalker activated::...')
+        print('...:::Stalker activated:::...')
         print(ricardo)
 
     def on_status(self, status):
