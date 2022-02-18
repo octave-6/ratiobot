@@ -16,7 +16,7 @@ This will allow me to reference this mini-project in the future with ease.
 
 ## Use to send a message to friends who deserve consistent ratios.
 
-The easy readability allows easy quick and easy adjustment to the code.
+The  readability allows easy and quick adjustment to the code.
 
 Want to add a new ratio condition? Add elif statements where indicated by the comment,   
 then add a list with personalized ratios. The experience is easily adjusted to suit the current needs.
