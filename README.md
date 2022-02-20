@@ -29,5 +29,5 @@ The power of the ratio is in our hands, we must treat this power with respect.
 ### Current known bugs:
 Currently, ratiobot haphazardly ratios not only the indicated user, but also any who reply to the user.
 
-While I could fix this, some mildly entertaining results have come from this.
+While I could fix this, some mildly entertaining results have come from this.   
 So for now, I declare this bug to be a feature, and any who oppose this can catch this ratio.
