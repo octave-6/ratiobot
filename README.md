@@ -34,7 +34,7 @@ While I could fix this, some mildly entertaining results have come from this.
 So for now, I declare this bug to be a feature, and any who oppose this can catch this ratio.
 
 ## Current future plans:
-As I continue to be bored with myself, I find myself wishing for more things for my bot to do.
+As I continue to be bored with myself, I find myself wishing for more things for my bot to do.  
 After all, he is a good bot who is doing his best.
 
 ### Current features being actively worked on:
