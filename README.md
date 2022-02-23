@@ -38,13 +38,13 @@ As I continue to be bored with myself, I find myself wishing for more things for
 After all, he is a good bot who is doing his best.
 
 ### Current features being actively worked on:
->Sentiment Analysis of indicated users from the past 24 hours
->Daily weather tweet in honor of Edbot, the greatest bot to grace our existence
->More ratios
+- Sentiment Analysis of indicated users from the past 24 hours
+- Daily weather tweet in honor of Edbot, the greatest bot to grace our existence
+- More ratios
 
 ### Stretch goal features that sound neat but are probably really hard and won't be even considered for a long time:
->Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
->>English Corpus
->>The entirety of *Fifty Shades of Gray*
->>Tweets collected from my friends
->Teach it how to make me breakfast
+- Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
+-- English Corpus
+-- The entirety of *Fifty Shades of Gray*
+-- Tweets collected from my friends
+- Teach it how to make me breakfast
