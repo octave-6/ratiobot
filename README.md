@@ -44,7 +44,7 @@ After all, he is a good bot who is doing his best.
 
 ### Stretch goal features that sound neat but are probably really hard and won't be even considered for a long time:
 - Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
--- English Corpus
--- The entirety of *Fifty Shades of Gray*
--- Tweets collected from my friends
+  -- English Corpus
+  -- The entirety of *Fifty Shades of Gray*
+  -- Tweets collected from my friends
 - Teach it how to make me breakfast
