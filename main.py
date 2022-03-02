@@ -1,4 +1,5 @@
 from ratio import wordle_ratio_list, ratio_list, ricardo
+from keywords import keywords
 import tweepy, random, time, os
 
 # setting env variables
