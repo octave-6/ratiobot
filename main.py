@@ -36,10 +36,10 @@ class Stalker(tweepy.Stream):
         # will @ the RTer with an empty tweet unless caught
         if status.text.startswith('RT'):
             return "Repeat after me: I will not ratio RTs"
-        # status.user.id == user ID of the bot posting the ratios,
-        # else the bot will endlessly ratio itself
-        if status.user.id == 1494375567218679811:
-            return 'Repeat after me: I will not ratio myself'
+        # for some reason user_ids didn't work for me unless they were strings
+        # that has since been fixed, but blahblahblah integers are strings now
+        if not str(status.user.id) in mantinus_id:
+            return 'Ratio responsibly, child'
         
         # now we can begin the ratio
         else:
