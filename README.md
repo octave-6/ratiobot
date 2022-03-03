@@ -35,7 +35,7 @@ Changelog:
   * Scheduler for daily tweets
   * More ratios (albeit omitted from the updated commits to hide the bot's full featureset
   * Some secret keywords activate special tweets
-  * Ratio bot now responsibly ratio's indicated user id's **only**
+  * Ratio bot now responsibly ratio's indicated user id's **ONLY**
 
 Changes on the way:
   * daily weather tweets in honor of Edbot
