@@ -42,8 +42,8 @@ Changes on the way:
   * Teach it how to brew my daily cup of coffee
 
 ### Stretch goals that sound neat but are probably really hard and won't be considered for a long time:
-- Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
-  - English Corpus
-  - The entirety of *Fifty Shades of Gray*
-  - Tweets collected from my friends
-- Teach it how to make me breakfast
+* Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
+  * English Corpus
+  * The entirety of *Fifty Shades of Gray*
+  * Tweets collected from my friends
+* Teach it how to make me breakfast
