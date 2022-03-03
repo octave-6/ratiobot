@@ -1,1 +1,7 @@
-
+grades
+from
+past
+grading
+routines
+go
+here
