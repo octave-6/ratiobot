@@ -32,15 +32,19 @@ Currently, ratiobot haphazardly ratios not only the indicated user, but also any
 While I could fix this, some mildly entertaining results have come from this.   
 
 So for now, I declare this bug to be a feature, and any who oppose this can catch this ratio.
+---
 
-## Current future plans:
-As I continue to be bored with myself, I find myself wishing for more things for my bot to do.  
-After all, he is a good bot who is doing his best.
+# Ratiobot 1.1 is officially here
 
-### Current features being actively worked on:
-- Sentiment Analysis of indicated users from the past 24 hours
-- Daily weather tweet in honor of Edbot, the greatest bot to grace our existence
-- More ratios
+Changelog:
+  * Sentiment Analysis of indicated user tweets
+  * Scheduler for daily tweets
+  * More ratios (albeit omitted from the updated commits to hide the bot's full featureset
+  * Some secret keywords activate special tweets
+
+Changes on the way:
+  * daily weather tweets in honor of Edbot
+  * Teach it how to brew my daily cup of coffee
 
 ### Stretch goals that sound neat but are probably really hard and won't be considered for a long time:
 - Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
