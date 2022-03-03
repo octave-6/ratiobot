@@ -103,5 +103,11 @@ def main():
     matninus_listener.filter(follow=mantinus_id, threaded=True)
 
 
+
 if __name__ == '__main__':
     main()
+
+    # simply to confirm the threaded listener class isn't interfering with other tasks somehow
+    time.sleep(30)
+    print('scheduler starting!')
+    sentiment_module.sentiment_scheduler.graded_scheduler()
