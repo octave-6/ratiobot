@@ -1,11 +1,9 @@
 zero = [
-    'Cogswell is witnessing it\'s final days', 'Is everone dead?',
-    'Cogswell is on the verge', 'Cogswell will soon fall',
+    '',
 ]
 
 ten_and_under = [
-    'Cogswell is on the verge of colapse', 'Ya\'ll good?',
-    'Cogswell is in it\'s final days', 'Jesus',
+    '',
 ]
 
 twenty_and_under = [
