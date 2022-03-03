@@ -45,14 +45,15 @@ class Stalker(tweepy.Stream):
                 with open('sentiment_analyzer/tweets.txt', 'a') as f:
                     f.write(f'{status.text}\n')
                     print('Non-ratio\'d tweet caught and written for SIA')
+                    time.sleep(0.2)
+                    print(f'Tweet from {status.user.screen_name}:')
+                    time.sleep(0.6)
+                    print(status.text, '  ::  ', status.id)
                     f.close()
             except Exception as e:
                 print('non-ratio\'d tweet caught, but error from text writer:')
                 print(e)
             return 'We shall not ratio these, child'
-
-        # catches tweets of other users, writes tweets to a txt file
-        # for the purpose collecting larger data samples for SIA
 
         # now we can begin the ratio
         else:
