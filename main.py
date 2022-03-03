@@ -37,11 +37,23 @@ class Stalker(tweepy.Stream):
         # will @ the RTer with an empty tweet unless caught
         if status.text.startswith('RT'):
             return "Repeat after me: I will not ratio RTs"
-        # for some reason user_ids didn't work for me unless they were strings
-        # that has since been fixed, but blahblahblah integers are strings now
-        if not str(status.user.id) in mantinus_id:
-            return 'Ratio responsibly, child'
-        
+        # ensures the bot doesn't mindlessly ratio everyone, including itself
+        # also catches tweets of other users, writes tweets to a txt file
+        # for the purpose collecting larger data samples for SIA
+        if not str(status.user.id) in ratio_users:
+            try:
+                with open('sentiment_analyzer/tweets.txt', 'a') as f:
+                    f.write(f'{status.text}\n')
+                    print('Non-ratio\'d tweet caught and written for SIA')
+                    f.close()
+            except Exception as e:
+                print('non-ratio\'d tweet caught, but error from text writer:')
+                print(e)
+            return 'We shall not ratio these, child'
+
+        # catches tweets of other users, writes tweets to a txt file
+        # for the purpose collecting larger data samples for SIA
+
         # now we can begin the ratio
         else:
             try:
@@ -51,6 +63,15 @@ class Stalker(tweepy.Stream):
                 time.sleep(0.2)
                 print('. . . . . .')
                 time.sleep(0.5)
+
+                try:
+                    with open('sentiment_analyzer/tweets.txt', 'a') as f:
+                        f.write(f'{status.text}\n')
+                        print('tweet written')
+                        f.close()
+                except Exception as e:
+                    print('Error from text writer:')
+                    print(e)
 
                 # if Wordle tweet, special ratios are utilized for a more personal experience
                 # else, a standard ratio is used
