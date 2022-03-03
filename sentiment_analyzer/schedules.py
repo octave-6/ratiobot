@@ -14,49 +14,49 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 
 def graded_tweets():
     print('ITS TWEET GRADING TIME')
-    cogswell_grade = sentiment_analysis()
+    cgrade = sentiment_analysis()
     time.sleep(1)
-    print(f'Grade: {cogswell_grade}')
+    print(f'Grade: {grade}')
     time.sleep(1)
 
-    if cogswell_grade < 0:
+    if grade < 0:
         print('Error in graded_tweets calculation')
         return
-    if cogswell_grade == 0:
+    elif grade == 0:
         rand = random.SystemRandom().randint(0,3)
         phrase = zero[rand]
-    if cogswell_grade <= 10:
+    elif grade <= 10:
         rand = random.SystemRandom().randint(0,3)
         phrase = ten_and_under[rand]
-    elif cogswell_grade <= 20:
+    elif grade <= 20:
         rand = random.SystemRandom().randint(0,5)
         phrase = twenty_and_under[rand]
-    elif cogswell_grade <= 30:
+    elif grade <= 30:
         rand = random.SystemRandom().randint(0,5)
         phrase = thirty_and_under[rand]
-    elif cogswell_grade <= 40:
+    elif grade <= 40:
         rand = random.SystemRandom().randint(0,5)
         phrase = forty_and_under[rand]
-    elif cogswell_grade <= 50:
+    elif grade <= 50:
         rand = random.SystemRandom().randint(0,5)
         phrase = fifty_and_under[rand]
-    elif cogswell_grade <= 60:
+    elif grade <= 60:
         rand = random.SystemRandom().randint(0,5)
         phrase = sixty_and_under[rand]
-    elif cogswell_grade <= 70:
+    elif grade <= 70:
         rand = random.SystemRandom().randint(0,5)
         phrase = seventy_and_under[rand]
-    elif cogswell_grade <= 80:
+    elif grade <= 80:
         rand = random.SystemRandom().randint(0,5)
         phrase = eighty_and_under[rand]
-    elif cogswell_grade <= 90:
+    elif grade <= 90:
         rand = random.SystemRandom().randint(0,5)
         phrase = ninety_and_under[rand]
     else:
         rand = random.SystemRandom().randint(0,5)
         phrase = hundred_and_under[rand]
     
-    api.update_status(f'The students of Cogswell Hall apear to be {cogswell_grade:.2f}% happy today.\n\n{phrase}')
+    api.update_status(f'Grade: {grade:.2f}% happiness.\n\n{phrase}')
 
 def graded_scheduler():
     schedule.every().day.at('20:30').do(graded_tweets)
