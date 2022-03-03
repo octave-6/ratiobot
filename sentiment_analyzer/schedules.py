@@ -2,6 +2,7 @@ from sentiment_analyzer.sentiment_tweets import *
 from sentiment_analyzer.sentiment import sentiment_analysis
 import schedule, time, random, tweepy, os
 
+# quick setting of env variables and authentication
 consumer_key = os.environ.get('ratio_bot_consumer')
 consumer_key_secret = os.environ.get('ratio_bot_consumer_secret')
 access_token = os.environ.get('ratio_bot_access')
@@ -12,6 +13,8 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
+# function for fetching the sentiment from the sentiment analyzer,
+# then declares where to pull accompanying tweet from
 def graded_tweets():
     print('ITS TWEET GRADING TIME')
     cgrade = sentiment_analysis()
@@ -19,6 +22,7 @@ def graded_tweets():
     print(f'Grade: {grade}')
     time.sleep(1)
 
+    # unnecessarily large if/elif block begins
     if grade < 0:
         print('Error in graded_tweets calculation')
         return
@@ -56,12 +60,20 @@ def graded_tweets():
         rand = random.SystemRandom().randint(0,5)
         phrase = hundred_and_under[rand]
     
-    api.update_status(f'Grade: {grade:.2f}% happiness.\n\n{phrase}')
+    daily = api.update_status(f'The students of Cogswell Hall apear to be {cogswell_grade:.2f}% happy today.\n\n{phrase}')
+    print(f'Daily Grading tweet sent   ::  {daily.text}')
+    
+    # ensures the scheduler is cancelled after the job is fulfilled
+    return schedule.CancelJob
 
+# scheduler for daily grader tweets
+# set currently for 8:30PM
 def graded_scheduler():
     schedule.every().day.at('20:30').do(graded_tweets)
 
+    # alerts once the tweet has been sent
     while True:
         schedule.run_pending()
         if not schedule.jobs:
             print('Graded Tweet sent successfully!')
+            break
