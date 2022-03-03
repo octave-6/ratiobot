@@ -11,13 +11,23 @@ def sentiment_analysis():
             grades.append(sia.polarity_scores(tweet)['compound'])
 
 
+    if len(grades) == 0:
+        print('LOL you fucked up your tweet writer')
+        print('Anyway just take a 50% because I\'m lazy')
+        return 50.63
+              
     # returned polarity score
-    initial_average = sum(grades) / len(grades)
-    try:
-        adjusted_average = ((initial_average + 1) / 2) * 100
-        open('sentiment_analyzer/tweets.txt', 'w').close()
-        return adjusted_average
-    except:
-        print('adjusted average equates to zero. Everyone is having a very bad day.')
-        open('sentiment/tweets.txt', 'w').close()
-        return 0.00
+    else:
+        initial_average = sum(grades) / len(grades)
+              
+        try:
+            adjusted_average = ((initial_average + 1) / 2) * 100
+            open('sentiment_analyzer/tweets.txt', 'w').close()
+              
+            return adjusted_average
+              
+        except:
+            print('adjusted average equates to zero. Everyone is having a very bad day.')
+            open('sentiment/tweets.txt', 'w').close()
+              
+            return 0.00
