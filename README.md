@@ -26,12 +26,6 @@ then add a list with personalized ratios. The experience is easily adjusted to s
 Getting auto-ratiod for the rest of eternity can be mentally taxing.   
 The power of the ratio is in our hands, we must treat this power with respect.
 
-### Current known bugs:
-Currently, ratiobot haphazardly ratios not only the indicated user, but also any who reply to the user.
-
-While I could fix this, some mildly entertaining results have come from this.   
-
-So for now, I declare this bug to be a feature, and any who oppose this can catch this ratio.
 ---
 
 # Ratiobot 1.1 is officially here
@@ -41,6 +35,7 @@ Changelog:
   * Scheduler for daily tweets
   * More ratios (albeit omitted from the updated commits to hide the bot's full featureset
   * Some secret keywords activate special tweets
+  * Ratio bot now responsibly ratio's indicated user id's **only**
 
 Changes on the way:
   * daily weather tweets in honor of Edbot
