@@ -33,7 +33,7 @@ The power of the ratio is in our hands, we must treat this power with respect.
 Changelog:
   * Sentiment Analysis of indicated user tweets
   * Scheduler for daily tweets
-  * More ratios (albeit omitted from the updated commits to hide the bot's full featureset
+  * More ratios (albeit omitted from the updated commits to hide the bot's full featureset)
   * Some secret keywords activate special tweets
   * Ratio bot now responsibly ratio's indicated user id's **ONLY**
 
