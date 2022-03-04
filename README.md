@@ -70,6 +70,8 @@ Once the bot has run it's course and I get tired of it (I give it around 3 days 
 the entire source code will be released.
 
 I've left the bare framework of the bot available for viewing either for those curious, 
-or those who want to make their own simple twitter bot. (message me if you want help doing so, I love helping!)
+or those who want to make their own simple twitter bot. 
+(message me if you want help doing so, I love helping!)
 
-So for those of you coming here to spoil the secrets contained within the bot, sorry, there are none to be found here.
+So for those of you coming here to spoil the secrets contained within the bot, 
+sorry, there are none to be found here.
