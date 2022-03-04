@@ -39,12 +39,17 @@ Changelog:
 
 Changes on the way:
   * daily weather tweets in honor of Edbot
-  * user specific ratios for a more personalized experience
+  * Updated ratio list is being written and worked on
+    * Planned unique ratios will number around 600
+      * for reference, current count is about 90
+    * More unique tweet instances
+    * 
   * Teach it how to brew my daily cup of coffee
 
 ## Ratiobot 1.1.2:
  * New specialized tweets
  * Something that will probably make me single has been implemented
+ * Percent chance to do nothing implemented on the basis that my bot is really fucking annoying
  * User-specified tweet responses
 
 ### Stretch goals that sound neat but are probably really hard and won't be considered for a long time:
