@@ -65,13 +65,13 @@ Changes on the way:
 
 As it currently stands, the source code isn't *completely* open for public viewing
 
-This is due to the bot having plenty of surprises I'd much rather leave private for the time being. 
-Once the bot has run it's course and I get tired of it (I give it around 3 days max probably), 
-the entire source code will be released.
+This is due to the bot having plenty of surprises I'd much rather leave private for the time being.  
+Once the bot has run it's course and I get tired of it (I give it around 3 days max probably),  
+the entire source code will be released.  
 
-I've left the bare framework of the bot available for viewing either for those curious, 
-or those who want to make their own simple twitter bot. 
-(message me if you want help doing so, I love helping!)
+I've left the bare framework of the bot available for viewing either for those curious,  
+or those who want to make their own simple twitter bot.  
+(message me if you want help doing so, I love helping!)  
 
-So for those of you coming here to spoil the secrets contained within the bot, 
-sorry, there are none to be found here.
+So for those of you coming here to spoil the secrets contained within the bot,  
+sorry, there are none to be found here. 
