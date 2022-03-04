@@ -39,6 +39,7 @@ Changelog:
 
 Changes on the way:
   * daily weather tweets in honor of Edbot
+  * user specific ratios for a more personalized experience
   * Teach it how to brew my daily cup of coffee
 
 ## Ratiobot 1.1.1:
