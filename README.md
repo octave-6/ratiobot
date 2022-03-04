@@ -46,7 +46,7 @@ Changes on the way:
     * 
   * Teach it how to brew my daily cup of coffee
 
-## Ratiobot 1.1.2:
+## Ratiobot 1.1.3:
  * New specialized tweets
  * Something that will probably make me single has been implemented
  * Percent chance to do nothing implemented on the basis that my bot is really fucking annoying
@@ -58,3 +58,18 @@ Changes on the way:
   * The entirety of *Fifty Shades of Gray*
   * Tweets collected from my friends
 * Teach it how to make me breakfast
+
+---
+
+### About the source code
+
+As it currently stands, the source code isn't *completely* open for public viewing
+
+This is due to the bot having plenty of surprises I'd much rather leave private for the time being. 
+Once the bot has run it's course and I get tired of it (I give it around 3 days max probably), 
+the entire source code will be released.
+
+I've left the bare framework of the bot available for viewing either for those curious, 
+or those who want to make their own simple twitter bot. (message me if you want help doing so, I love helping!)
+
+So for those of you coming here to spoil the secrets contained within the bot, sorry, there are none to be found here.
