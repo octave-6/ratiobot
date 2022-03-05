@@ -44,8 +44,8 @@ Changes on the way:
       * for reference, current count is about 90
     * More unique tweet instances
   * Bot currently grades sentiment of non-words (such as @s, or links)
-    * While likely an easy fix, my brain cannot currently wrap my head around the list comprehension 
-      and simple logic required. I'll do this when I have more caffeine in my system.
+    * While likely an easy fix, my brain cannot currently wrap my head around the list comprehension  
+      and simple logic required. I'll do this when I have more caffeine in my system. 
   * Teach it how to brew my daily cup of coffee
 
 ## Ratiobot 1.1.3:
