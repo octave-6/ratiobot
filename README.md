@@ -33,7 +33,7 @@ The power of the ratio is in our hands, we must treat this power with respect.
 Changelog:
   * Sentiment Analysis of indicated user tweets
   * Scheduler for daily tweets
-  * More ratios (albeit omitted from the updated commits to hide the bot's full featureset)
+  * More ratios
   * Some secret keywords activate special tweets
   * Ratio bot now responsibly ratio's indicated user id's **ONLY**
 
@@ -48,11 +48,13 @@ Changes on the way:
       and simple logic required. I'll do this when I have more caffeine in my system. 
   * Teach it how to brew my daily cup of coffee
 
-## Ratiobot 1.1.3:
+## Ratiobot 1.1.4:
  * New specialized tweets
  * Something that will probably make me single has been implemented
  * Percent chance to do nothing implemented on the basis that my bot is really fucking annoying
- * User-specified tweet responses
+   * But it's currently operating at 100% because I'm not bored yet
+ * New user-specified tweet responses
+ * Fixed a variable overlap errer (rookie mistake ouch)
 
 ### Stretch goals that sound neat but are probably really hard and won't be considered for a long time:
 * Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
