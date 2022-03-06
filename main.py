@@ -1,23 +1,29 @@
-from ratio import wordle_ratio_list, ratio_list, ricardo
-from keywords import keywords
+from ratio import ricardo, wordle_ratio_list, ratio_list, iup_ratio_list, ratio_ratio_list, cogswell_ratio_list, liz_ratios, flerb
+from keywords import ukraine_keywords, cogswell_keywords, luke_keywords, ratio_keywords, ratio_bot_keywords, iup_keywords
+from sentiment_module import sentiment_scheduler
 import tweepy, random, time, os
 
 # setting env variables
-consumer_key = os.environ.get('ratio_consumer')
-consumer_key_secret = os.environ.get('ratio_consumer_secret')
-access_token = os.environ.get('ratio_access')
-access_token_secret = os.environ.get('ratio_access_secret')
+consumer_key = os.environ.get('ratio_bot_consumer')
+consumer_key_secret = os.environ.get('ratio_bot_consumer_secret')
+access_token = os.environ.get('ratio_bot_access')
+access_token_secret = os.environ.get('ratio_bot_access_secret')
 # setting mantinus twitter ID
 # additional IDs can be added for more ratio goodness
-mantinus_id = ['ID HERE',]
+mantinus_id = [
+
+    ]
+
+ratio_users = [
+
+]
+
 
 # twitter auth
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
-
-
 
 class Stalker(tweepy.Stream):
 
@@ -42,7 +48,7 @@ class Stalker(tweepy.Stream):
         # for the purpose collecting larger data samples for SIA
         if not str(status.user.id) in ratio_users:
             try:
-                with open('sentiment_analyzer/tweets.txt', 'a') as f:
+                with open('sentiment_module/tweets.txt', 'a') as f:
                     f.write(f'{status.text}\n')
                     print('Non-ratio\'d tweet caught and written for SIA')
                     time.sleep(0.2)
@@ -55,7 +61,6 @@ class Stalker(tweepy.Stream):
                 print(e)
             return 'We shall not ratio these, child'
 
-        # now we can begin the ratio
         else:
             try:
                 print(f'Tweet from {status.user.screen_name} received:')
@@ -66,7 +71,7 @@ class Stalker(tweepy.Stream):
                 time.sleep(0.5)
 
                 try:
-                    with open('sentiment_analyzer/tweets.txt', 'a') as f:
+                    with open('sentiment_module/tweets.txt', 'a') as f:
                         f.write(f'{status.text}\n')
                         print('tweet written')
                         f.close()
@@ -74,23 +79,47 @@ class Stalker(tweepy.Stream):
                     print('Error from text writer:')
                     print(e)
 
-                # if Wordle tweet, special ratios are utilized for a more personal experience
-                # else, a standard ratio is used
-                if status.text.startswith('Wordle'):
-                    rand = random.randint(0,11)
-                    ratio = api.update_status(f'@{status.user.screen_name} {wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
-                    api.create_favorite(ratio.id)
-                    time.sleep(1)
-                    print('wordle ratio sent')
+                # my bot is really fucking annoying
+                # make it less (or more) annoying here:
+                # currently set at: 100% ratio percentage
+                legit_RNG = random.SystemRandom().randint(1,1)
+                print('RNG:', legit_RNG)
                 
-                # Add elif conditions here to further personalize your ratio experience
-                
+                # ratio begins within this if branch
+                if legit_RNG == 1:
+                    print('Ratio will begin')
+                    time.sleep(2)
+                    
+                    # NOTE: BE AWARE OF THE HIERARCHY
+                    # Only ONE ratio can be used, so once a condition is satisfied, the ratio list is picked
+                    # therefore, higher priority or special case ratios should be placed first,
+                    # user specific ratios should be placed near the end of the conditions
+
+                    # various one-off customized responses, highly specific
+                    # high priority tweets or ratios
+                    if status.text.startswith('Wordle'):
+                        print('Attempting Wordle ratio. . .')
+                        rand = random.SystemRandom().randint(0,9)
+                        ratio = api.update_status(f'{wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
+                        api.create_favorite(ratio.id)
+                        time.sleep(1)
+                        print(f'wordle ratio sent  ::  {ratio.text}\n')
+                    
+                    else:
+                        print('Attempting standard ratio. . .')
+                        rand = random.SystemRandom().randint(0,27)
+                        ratio = api.update_status(f'{ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
+                        api.create_favorite(ratio.id)
+                        time.sleep(1)
+                        print(f'ratio sent  ::  {ratio.text}\n')
+
+
+                # this is that RNG else that you probably forgot existed
                 else:
-                    rand = random.randint(0,38)
-                    ratio = api.update_status(f'@{status.user.screen_name} {ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
-                    api.create_favorite(ratio.id)
-                    time.sleep(1)
-                    print('ratio sent.')
+                    print('RNG has decided no ratio shall be used today')
+                    print('The students of Cogswell are spared, for now...')
+
+
             except Exception as e:
                 print('yo you suck at writing code:', e)
 
@@ -108,6 +137,5 @@ if __name__ == '__main__':
     main()
 
     # simply to confirm the threaded listener class isn't interfering with other tasks somehow
-    time.sleep(30)
-    print('scheduler starting!')
-    sentiment_module.sentiment_scheduler.graded_scheduler()
+    time.sleep(5)
+    sentiment_scheduler.graded_scheduler()
