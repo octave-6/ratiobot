@@ -75,11 +75,12 @@ def graded_tweets():
 # scheduler for daily grader tweets
 # set currently for 8:30PM
 def graded_scheduler():
+    print('Graded scheduler started!')
     schedule.every().day.at('20:30').do(graded_tweets)
 
     # alerts once the tweet has been sent
     while True:
         schedule.run_pending()
         if not schedule.jobs:
-            print('Graded Tweet sent successfully!')
+            print('\n-------------------------------\nGraded Tweet sent successfully!\n-------------------------------\n')
             break
