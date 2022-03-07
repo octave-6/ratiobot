@@ -16,7 +16,7 @@ mantinus_id = [
 
 ratio_users = [
 
-]
+    ]
 
 
 # twitter auth
