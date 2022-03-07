@@ -99,7 +99,7 @@ class Stalker(tweepy.Stream):
                     # high priority tweets or ratios
                     if status.text.startswith('Wordle'):
                         print('Attempting Wordle ratio. . .')
-                        rand = random.SystemRandom().randint(0,9)
+                        rand = random.SystemRandom().randint(0,0)
                         ratio = api.update_status(f'{wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                         api.create_favorite(ratio.id)
                         time.sleep(1)
@@ -107,7 +107,7 @@ class Stalker(tweepy.Stream):
                     
                     else:
                         print('Attempting standard ratio. . .')
-                        rand = random.SystemRandom().randint(0,27)
+                        rand = random.SystemRandom().randint(0,0)
                         ratio = api.update_status(f'{ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                         api.create_favorite(ratio.id)
                         time.sleep(1)
@@ -117,7 +117,7 @@ class Stalker(tweepy.Stream):
                 # this is that RNG else that you probably forgot existed
                 else:
                     print('RNG has decided no ratio shall be used today')
-                    print('The students of Cogswell are spared, for now...')
+                    print('The students of #userbase# are spared, for now...')
 
 
             except Exception as e:
