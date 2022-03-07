@@ -2,11 +2,12 @@
 
 ## A very simple, yet effective bot
 
-Ratiobot is a quick foray into the twitter API.
+Ratiobot is a quick, low effort meme that now consumes my free time for no reason.
 
-While a quick and easy meme, this project allowed me to familiarize myself with authenticating    
-to the twitter API, authenticating a third-party user, posting and interacting with tweets,   
-and just becoming generally more comfortable with the tweepy library   
+He is not funny, he is not smart. He is not capable of passing the turing test, and he  
+certainly won't make you breakfast. I know, I tried. What he is, however, is a quick  
+jump into the tweepy library, interacting with an indicated userbase and making them  
+wish they could delete twitter faster.  
 
 I have attempted to make this code as easy to read as possible, with plenty of  
 clear and concise comments to explain every block of code I felt needed clarification.  
