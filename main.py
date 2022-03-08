@@ -148,7 +148,7 @@ if __name__ == '__main__':
     time.sleep(10)
     try:
         Thread(target = sentiment_scheduler.graded_tweet_scheduler).start()
-        Thread(target = weather_scheduler.daily_weather).start()
+        Thread(target = weather_scheduler.weather_tweet_scheduler).start()
 
         time.sleep(1)
         print('RatioBot online and functional')
