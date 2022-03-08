@@ -1,5 +1,5 @@
-from weather_tweets import too_cold, below_twenty, below_forty, below_sixty, below_eighty, below_hundred, too_hot
-from weather_interpreter import daily_weather
+from weather_module.weather_tweets import too_cold, below_twenty, below_forty, below_sixty, below_eighty, below_hundred, too_hot
+from weather_module.weather_interpreter import daily_weather
 import schedule, time, random, tweepy, os
 
 # quick setting of env variables and authentication
@@ -17,7 +17,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 # posts a tweet that includes a temp, 'real feel temp', and the phrase in question
 def daily_weather():
 
-    temp, feels_like = daily_weather()
+    temp, feels_like = weather_collector()
     
     if feels_like < 0:
         rand = random.SystemRandom().randint(0,6)
