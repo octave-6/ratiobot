@@ -39,6 +39,7 @@ Changelog:
    * Weather tweet scheduled to be released at 08:00 daily
  * New triggers added
  * Fixed a broken trigger that wasn't working as intended
+ * Threaded tweet schedulers for simultaneous scheduling
 
 Changes on the way:
   * More detailed weather reports
