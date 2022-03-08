@@ -9,7 +9,7 @@ weather_url = f'http://api.openweathermap.org/data/2.5/weather?id={city_id}&appi
 
 # fetches the weather from openweathermap API
 # returns measured temperature and "real-feel" temperature
-def daily_weather():
+def weather_collector():
     print('IT\'S WEATHER TIME')
     
     response = requests.get(weather_url)
