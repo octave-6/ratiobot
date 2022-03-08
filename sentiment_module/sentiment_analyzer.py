@@ -1,18 +1,37 @@
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-# uses nltk vader model to grade tweet sentiment, then return the score as a float
-# currently using the default trained model, may later train my own model
-def sentiment_analysis():
-
-    sia = SentimentIntensityAnalyzer()
-    grades = []
+# filters junk out of each tweet
+# such as @s, https, and hashtags
+def filter():
+    dirty_tweets = []
+    clean_tweets = []
 
     with open('sentiment_module/tweets.txt') as f:
         for tweet in f:
-            grades.append(sia.polarity_scores(tweet)['compound'])
+            dirty_tweets.append(tweet)
+        f.close()
+        
+    for tweet in dirty_tweets:
+            words = str(tweet).split(' ')
+            cleaning = [word for word in words if not word.startswith('#') and not word.startswith('http') 
+                                                        and not word.startswith('@') and not word.startswith('\n')]
+            tweet = ' '.join(cleaning)
+            clean_tweets.append(tweet)
+    
+    return clean_tweets
+    
+# uses nltk vader model to grade tweet sentiment, then return the score as a float
+# currently using the default trained model, may later train my own model
+def sentiment_analysis():
+    sia = SentimentIntensityAnalyzer()
+    filtered_tweets = filter()
+    grades = []
+
+    for tweet in filtered_tweets:
+        grades.append(sia.polarity_scores(tweet)['compound'])
 
     # catches division by zero before it happens
-    print(len(grades))
+    print('Tweets graded:', len(grades))
     if len(grades) == 0:
         print('LOL you fucked up your tweet writer')
         print('Anyway just take a 50% because I\'m lazy')
