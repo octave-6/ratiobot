@@ -1,6 +1,8 @@
-from ratio import ricardo, wordle_ratio_list, ratio_list, iup_ratio_list, ratio_ratio_list, cogswell_ratio_list, liz_ratios, flerb
-from keywords import ukraine_keywords, cogswell_keywords, luke_keywords, ratio_keywords, ratio_bot_keywords, iup_keywords
 from sentiment_module import sentiment_scheduler
+from weather_module import weather_scheduler
+from keywords import *
+from ratio import *
+from threading import Thread
 import tweepy, random, time, os
 
 # setting env variables
@@ -11,12 +13,17 @@ access_token_secret = os.environ.get('ratio_bot_access_secret')
 # setting mantinus twitter ID
 # additional IDs can be added for more ratio goodness
 mantinus_id = [
-
+    '855841375094484993', '1389291966458912768', '1454908630617268228', '1292871134212435968',
+    '2408557408', '765389324724625408', '1106758045370073098', '1519685210', '1014559035725680640',
+    '1360436888214134788', '1127781860149428225', '983030705440555009', '1255918410', '1457952757',
+    '1123602921327943681', '905958091887452160', '841776740456402944', '1179080091332206598',
+    '1317082603942563843', '1233533606724820992', '701177228613316608', '824021275517521920',
+    '2999135039', '1642032943', 
     ]
 
 ratio_users = [
-
-    ]
+    '1317082603942563843', '1255918410', '701177228613316608', '905958091887452160',
+]
 
 
 # twitter auth
@@ -99,15 +106,16 @@ class Stalker(tweepy.Stream):
                     # high priority tweets or ratios
                     if status.text.startswith('Wordle'):
                         print('Attempting Wordle ratio. . .')
-                        rand = random.SystemRandom().randint(0,0)
+                        rand = random.SystemRandom().randint(0,9)
                         ratio = api.update_status(f'{wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                         api.create_favorite(ratio.id)
                         time.sleep(1)
                         print(f'wordle ratio sent  ::  {ratio.text}\n')
                     
+                    # standard ratio is used after all these checks are put in place
                     else:
                         print('Attempting standard ratio. . .')
-                        rand = random.SystemRandom().randint(0,0)
+                        rand = random.SystemRandom().randint(0,27)
                         ratio = api.update_status(f'{ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                         api.create_favorite(ratio.id)
                         time.sleep(1)
@@ -117,7 +125,7 @@ class Stalker(tweepy.Stream):
                 # this is that RNG else that you probably forgot existed
                 else:
                     print('RNG has decided no ratio shall be used today')
-                    print('The students of #userbase# are spared, for now...')
+                    print('The students of Cogswell are spared, for now...')
 
 
             except Exception as e:
@@ -126,7 +134,7 @@ class Stalker(tweepy.Stream):
 def main():
     matninus_listener = Stalker(
         consumer_key, consumer_key_secret,
-        access_token, access_token_secret
+        access_token, access_token_secret,
     )
 
     matninus_listener.filter(follow=mantinus_id, threaded=True)
@@ -137,5 +145,15 @@ if __name__ == '__main__':
     main()
 
     # simply to confirm the threaded listener class isn't interfering with other tasks somehow
-    time.sleep(5)
-    sentiment_scheduler.graded_scheduler()
+    time.sleep(10)
+    try:
+        Thread(target = sentiment_scheduler.graded_tweet_scheduler).start()
+        Thread(target = weather_scheduler.daily_weather).start()
+
+        time.sleep(1)
+        print('RatioBot online and functional')
+    except Exception as e:
+        print('Error launching RatioBot:', e)
+        
+        time.sleep(10)
+        exit()
