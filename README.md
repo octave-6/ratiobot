@@ -49,13 +49,11 @@ Changes on the way:
       and simple logic required. I'll do this when I have more caffeine in my system. 
   * Teach it how to brew my daily cup of coffee
 
-## Ratiobot 1.1.4:
- * New specialized tweets
- * Something that will probably make me single has been implemented
- * Percent chance to do nothing implemented on the basis that my bot is really fucking annoying
-   * But it's currently operating at 100% because I'm not bored yet
- * New user-specified tweet responses
- * Fixed a variable overlap errer (rookie mistake ouch)
+## Ratiobot 1.2:
+ * Weather check and tweets are implemented
+   * Weather tweet scheduled to be released at 08:00 daily
+ * New triggers added
+ * Fixed a broken trigger that wasn't working as intended
 
 ### Stretch goals that sound neat but are probably really hard and won't be considered for a long time:
 * Using Tensorflow (or just a markov chain if i get too lazy) to train a model to tweet based on:
