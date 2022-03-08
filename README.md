@@ -41,11 +41,16 @@ Changelog:
  * Fixed a broken trigger that wasn't working as intended
 
 Changes on the way:
-  * Cleaning of tweets before being analyzed
-    * this includes removal of links, @s and hastags
   * More detailed weather reports
     * currently only includes temp and *real feel* temp
   * Teach it to stop my cat from tearing down my posters
+
+## Ratiobot 1.2.1
+
+felt very caffeinated, so updated the sentiment analyzer:
+
+  * Tweets are now cleaned of noise before being grades
+  * A few new phrases added for more variety
 
 ## Next Milestone Update:
 
