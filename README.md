@@ -65,8 +65,8 @@ The model will be trained on:
   * Hundreds of custom, hand written ratios
     * This will take a bulk of my effort
 
-I have written the word 'ratio' so many times I'm beginning to fear for my sanity. 
-Relying on this update being completed ASAP
+I have written the word 'ratio' so many times I'm beginning to fear for my sanity.  
+Relying on this update being completed ASAP  
 
 ---
 
