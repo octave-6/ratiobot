@@ -49,8 +49,8 @@ Changes on the way:
 
 ## Next Milestone Update:
 
-The current wall I'm running into is the sheer line of dialogue being created for this bot. 
-Currently, I have about 200 lines of dialogue written, with each line containing multiple tweets 
+The current wall I'm running into is the sheer line of dialogue being created for this bot.   
+Currently, I have about 200 lines of dialogue written, with each line containing multiple tweets  
 (sometimes as many as 5 tweets per line).
 
 This being the great filter of this project is just silly. Thus, I have begin collecting data  
