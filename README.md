@@ -50,7 +50,7 @@ Changes on the way:
 
 felt very caffeinated, so updated the sentiment analyzer:
 
-  * Tweets are now cleaned of noise before being grades
+  * Tweets are now cleaned of noise before being graded
   * A few new phrases added for more variety
 
 ## Next Milestone Update:
