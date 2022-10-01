@@ -27,8 +27,12 @@ weeks as well as a collection of new ratios to vary the 'experience' a little mo
 
 ---
 
-I have a fully trained model for machine learning purposes. However it requires significant personal moderation  
-for it to be: (A) funny, and (B) not insensitive (more on that later) so I've decided it is not worth my time  
+I have a fully trained model for machine learning purposes ready to get, trained off of over 50,000 tweets collected  
+from the people of Cogswell. However it requires significant personal moderation  for it to be: (
+ (A) funny
+ (B) not insensitive
+ 
+so I've decided it is not worth my time in it's current state to move forward with.
 
 The model oftentimes says some weird, not funny things that would make some uncomfortable, which is my biggest  
 reason for not wanting to utilize this for now. I may implement the model in some limited fashion further down  
