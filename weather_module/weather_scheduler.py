@@ -50,9 +50,6 @@ def daily_weather():
     
     daily = api.update_status(f'Goooood morning I-U-People!\n\nIt is currently {str(temp)[0:2]}°F, {condition_phrase}!\n\n{phrase}')
     print(f'Daily Weather tweet sent   ::   {daily.text}')
-
-    # ensures the scheduler is cancelled after the job is fulfilled
-    return schedule.CancelJob
     
 
 # scheduler for the weather tweets

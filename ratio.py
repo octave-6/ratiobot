@@ -23,7 +23,7 @@ iup_ratio_list = [
 ]
 
 say_my_name = [
-    'Chant my name three times in the mirror for a surprise!', 'ratio + I\'m the ratiobot + ur mom', 'Say that to my face fucker', 'You wouldn\'t say that to me IRL bro', 'i am speed',
+    'I\'m poopin', 'ratio + I\'m the ratiobot + ur mom', 'Say that to my face fucker', 'You wouldn\'t say that to me IRL bro', 'i am speed',
     'i think its hilarious u kids talking shit about me. u wouldnt say this shit to him me lan, im jacked. not only that but i wears the freshest clothes, eat at the chillest restaurants and hang out with the hottest dudes. yall are pathetic lol',
 ]
 

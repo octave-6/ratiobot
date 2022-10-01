@@ -47,11 +47,9 @@ def graded_tweets():
         f.write(f'{cogswell_grade}\n')
         f.close()
 
-    # ensures the scheduler is cancelled after the job is fulfilled
-    return schedule.CancelJob
 
-# scheduler for daily grader tweets
-# set currently for 8:30PM
+# scheduler for weekly tweet grading
+# set currently for Fridays @ 8:30PM
 def graded_tweet_scheduler():
     schedule.every().friday.at('20:30').do(graded_tweets)
 

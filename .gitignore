@@ -1,0 +1,5 @@
+__pycache__/
+/ratiobot/photos/
+/sentiment_module/tweets.txt
+/sentiment_module/grades.txt
+/weather_module/__pycache__
