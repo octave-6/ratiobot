@@ -5,7 +5,7 @@ A bot created out of excess boredom and a desire to annoy everyone I know on Twi
 ---
 
 ## Ratio Bot's Purpose
----
+
 Ratio Bot was created with one primary goal in mind:
   - Automatically ratio a specific person on twitter
 
@@ -37,8 +37,6 @@ the line, but as it currently stands I'm keeping the model in nmy back pocket fo
 ---
 
 ## Ratio Bot 1.2.7
-
----
 
   - Restructured code for better future proofing
   - Fixed error with tweet writter for SIA purposes
