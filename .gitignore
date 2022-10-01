@@ -1,5 +1,7 @@
-__pycache__
+*__pycache__*
 photos/
 /sentiment_module/tweets.txt
 /sentiment_module/grades.txt
 connection_log.txt
+__pycache__
+__pycache__/
