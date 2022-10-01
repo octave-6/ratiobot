@@ -1,6 +1,5 @@
 # Ratio Bot
 
----
 A bot created out of excess boredom and a desire to annoy everyone I know on Twitter.
 
 ---
