@@ -56,6 +56,10 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
 --- 
 
   - Scheduler for tweets occasionally attempts double tweeting. at least it doesn't crash every time now, but it's annoying to see an error raised on occasion.
+  - Not an issue inherently, but sentiment analysis hovers around 50% consistently.
+    - This is to be expected, I'm tracking sentiment of all tweets over an extended period of time on literally every subject
+    - Because of this, I plan on making the analysis a little more volatile, perhapss within a 45-55% range
+    - More testing needs done on this before implementation
 
 ---
 
