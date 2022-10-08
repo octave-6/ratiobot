@@ -66,7 +66,6 @@ class Stalker(tweepy.Stream):
         Collects tweet status from indicated users and immediately records them to tweets.txt
         Indicated users are responded to immediately, allowing optimal ratio time
         '''
-        print(status.truncated)
 
         # will @ the RTer with an empty tweet unless caught
         if status.text.startswith('RT'):
