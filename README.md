@@ -47,7 +47,7 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
   - Fixed encoding error prohibiting some tweet from being recorded and sentiment analysis from occuring. All tweets should now be recorded successfully.
   - Now catches truncated tweets and pulls the 'extended_tweet' json for full tweet viewing
   - Added some spaghetti, will clean up at a later date
-  - Erassed 
+  - On the other side of the coin, cleaned up some other spaghetti 
 
 ---
 
