@@ -15,22 +15,16 @@ access_token_secret = os.environ.get('ratio_bot_access_secret')
 # users to be followed in the stream for tweet collection are set here
 # IDs that are privated will no longer be collected, but will not break the bot thanks to a try/catch block
 mantinus_id = [
-    '1389291966458912768', '1454908630617268228', '1292871134212435968',
-    '2408557408', '765389324724625408', '1106758045370073098', '1519685210', '1014559035725680640',
-    '1360436888214134788', '1127781860149428225', '983030705440555009', '1255918410', '1457952757',
-    '1123602921327943681', '905958091887452160', '841776740456402944', '1179080091332206598',
-    '1317082603942563843', '1233533606724820992', '701177228613316608', '824021275517521920',
-    '2999135039', '1642032943', '1453491424545095683', '1562265710356705281', '1362113595039973377',
-    '900921923655413761', '1409380417', '1364237901022830592', '913398899116830722', '846990031407460352',
+
     ]
 
 # users to be actively ratio'd are set here
 ratio_users = [
-    '1317082603942563843', '1255918410', '701177228613316608', '905958091887452160',
+
 ]
 
 # twitter auth
-auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
+auth = tweepy.OAuthHgit andler(consumer_key, consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
