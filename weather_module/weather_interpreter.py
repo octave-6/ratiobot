@@ -1,5 +1,4 @@
 # fetching weather data from the openweathermap API
-from msilib.schema import Condition
 import os, requests, json
 
 # setting openweathermap API key and URL for Indiana

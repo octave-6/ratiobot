@@ -24,12 +24,12 @@ iup_ratio_list = [
 
 say_my_name = [
     'I\'m poopin', 'ratio + I\'m the ratiobot + ur mom', 'Say that to my face fucker', 'You wouldn\'t say that to me IRL bro', 'i am speed',
-    'i think its hilarious u kids talking shit about me. u wouldnt say this shit to him me lan, im jacked. not only that but i wears the freshest clothes, eat at the chillest restaurants and hang out with the hottest dudes. yall are pathetic lol',
+    'i think its hilarious u kids talking shit about me. u wouldnt say this shit to him me on lan, im jacked. not only that but i wear the freshest clothes, eat at the chillest restaurants and hang out with the hottest dudes. yall are pathetic lol',
 ]
 
 ratio_ratio_list = [
     'pussyboi thinking you can ratio lolno, ratio', 'ratio + get cucked + no one asked + I ratio the ratio', 'nice ratio nerd, now check mine 👀',
-    'yo dawg I heard you like ratios, so I put a ratio on your ratio so you can ratio while you ratio', 'ininspired ratio, touch grass and catch this ratio',
+    'yo dawg I heard you like ratios, so I put a ratio on your ratio so you can ratio while you ratio', 'uninspired ratio, touch grass and catch this ratio',
     'nice ratio clown + check mine out + you just got Mr. Jums\'ed + sit kid + David made you + failed ratio + you\'re what zero pussy does to a mf',
 ]
 

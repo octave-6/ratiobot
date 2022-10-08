@@ -6,7 +6,7 @@ def filter():
     dirty_tweets = []
     clean_tweets = []
 
-    with open('sentiment_module/tweets.txt', encoding="utf-8") as f:
+    with open('sentiment_module/tweets.txt', encoding='UTF-8') as f:
         for tweet in f:
             dirty_tweets.append(tweet)
         f.close()
