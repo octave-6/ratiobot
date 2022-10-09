@@ -1,29 +1,19 @@
 from sentiment_module import sentiment_scheduler
 from weather_module import weather_scheduler
+from user_lists import *
 from keywords import *
 from ratio import *
 from threading import Thread
 from datetime import datetime
 import tweepy, random, time, os
 
-# setting env variables
+# env variables for privacy and twitter auth
 consumer_key = os.environ.get('ratio_bot_consumer')
 consumer_key_secret = os.environ.get('ratio_bot_consumer_secret')
 access_token = os.environ.get('ratio_bot_access')
 access_token_secret = os.environ.get('ratio_bot_access_secret')
 
-# users to be followed in the stream for tweet collection are set here
-# IDs that are privated will no longer be collected, but will not break the bot thanks to a try/catch block
-mantinus_id = [
 
-    ]
-
-# users to be actively ratio'd are set here
-ratio_users = [
-
-]
-
-# twitter auth
 auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
 auth.set_access_token(access_token, access_token_secret)
 
@@ -66,7 +56,6 @@ class Stalker(tweepy.Stream):
         Collects tweet status from indicated users and immediately records them to tweets.txt
         Indicated users are responded to immediately, allowing optimal ratio time
         '''
-        print(status.truncated)
 
         # will @ the RTer with an empty tweet unless caught
         if status.text.startswith('RT'):

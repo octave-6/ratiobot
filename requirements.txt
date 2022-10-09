@@ -1,0 +1,4 @@
+nltk==3.7
+requests==2.27.1
+schedule==1.1.0
+tweepy==4.6.0

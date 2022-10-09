@@ -51,6 +51,15 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
 
 ---
 
+### Ratio Bot 1.2.10
+
+#### Purely a project organizational update
+
+    - Moved user ID lists to it's own python file with an updated .gitignore
+    - Added dependencies in requirements.txt
+
+---
+
 ### Known Issues
 
 --- 
@@ -71,3 +80,16 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
  
 More features planned as my brain continues to create a weird desire to overload my bot with useless features.  
 These are planned to release by mid-November. A stretch featureset will be released later by the end of the Year.
+
+---
+
+### Dependencies
+
+---
+
+Dependencies are listed in requirements.txt and are as follows:
+
+  - nltk==3.7
+  - requrests==2.27.1
+  - schedule==1.1.0
+  - tweepy==4.6.0
