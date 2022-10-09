@@ -47,7 +47,7 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
   - Fixed encoding error prohibiting some tweet from being recorded and sentiment analysis from occuring. All tweets should now be recorded successfully.
   - Now catches truncated tweets and pulls the 'extended_tweet' json for full tweet viewing
   - Added some spaghetti, will clean up at a later date
-  - Erassed 
+  - On the other side of the coin, cleaned up some other spaghetti 
 
 ---
 
@@ -65,6 +65,10 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
 --- 
 
   - Scheduler for tweets occasionally attempts double tweeting. at least it doesn't crash every time now, but it's annoying to see an error raised on occasion.
+  - Not an issue inherently, but sentiment analysis hovers around 50% consistently.
+    - This is to be expected, I'm tracking sentiment of all tweets over an extended period of time on literally every subject
+    - Because of this, I plan on making the analysis a little more volatile, perhapss within a 45-55% range
+    - More testing needs done on this before implementation
 
 ---
 
