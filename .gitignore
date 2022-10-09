@@ -3,6 +3,4 @@ photos/
 /sentiment_module/tweets.txt
 /sentiment_module/grades.txt
 connection_log.txt
-__pycache__
-__pycache__/
 user_lists.py

@@ -55,8 +55,8 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
 
 #### Purely a project organizational update
 
-    - Moved user ID lists to it's own python file with an updated .gitignore
-    - Added dependencies in requirements.txt
+  - Moved user ID lists to it's own python file with an updated .gitignore
+  - Added dependencies in requirements.txt
 
 ---
 
