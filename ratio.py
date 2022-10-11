@@ -9,6 +9,7 @@ ratio_list = [
     'catch this ratio nerd', 'check this ratio pussyboi', 'we really gotta ratio you again? damn', 'cumb + ratio',  'ratio\'d by a bot, nerd', 
     'ratio + touch grass + you\'re what zero pussy does to a mf', 'ratio + stay mad + dont care + you just got coconut malled', 'ray - she - oh',
     'okay liberal + ratio + who asked + you just got Mr. Jums\'ed', 'ratio + touch grass + you fell off + you just got gnomed ol\' chum',
+    'Burger King is underrated + ratio', 'automatic ratio incoming. . .', 'AC-130 online to ratio your sorry ass', 'PP + Poopoo + ratio', 'didn\'t expect to have to ratio you again today, damn',
 ]
 wordle_ratio_list = [
     'nobody cares about wordle + ratio', 'wordle is a dead meme + ratio idiot', 'ratio idiot, wordle is for plebs',
@@ -23,29 +24,32 @@ iup_ratio_list = [
 ]
 
 say_my_name = [
-    'I\'m poopin', 'ratio + I\'m the ratiobot + ur mom', 'Say that to my face fucker', 'You wouldn\'t say that to me IRL bro', 'i am speed',
+    'I\'m poopin', 'ratio + I\'m the ratiobot + ur mom', 'Say that to my face fucker', 'You wouldn\'t say that to me IRL bro', 'i am speed', 'Yo whaddup', 'Breasts.', 'Hello', 'I\'m not very smart but at least I ratio big.',
     'i think its hilarious u kids talking shit about me. u wouldnt say this shit to him me on lan, im jacked. not only that but i wear the freshest clothes, eat at the chillest restaurants and hang out with the hottest dudes. yall are pathetic lol',
+    'I\'m jacked bro don\'t talk about me like that + ratio', 'Yo you called?', 'My PP is small + ratio', 'I\'m just a bot but don\'t forget I have feelings too...', 'I\'ll have you know I graduated top in my calss in the united states marine corp...',
 ]
 
 ratio_ratio_list = [
-    'pussyboi thinking you can ratio lolno, ratio', 'ratio + get cucked + no one asked + I ratio the ratio', 'nice ratio nerd, now check mine 👀',
-    'yo dawg I heard you like ratios, so I put a ratio on your ratio so you can ratio while you ratio', 'uninspired ratio, touch grass and catch this ratio',
+    'pussyboi thinking you can ratio', 'but where is your ratio?', 'nice ratio nerd, now check mine 👀', 'pathetic ratio\nyour power is weak compare to mine',
+    'yo dawg I heard you like ratios, so I put a ratio on your ratio so you can ratio while you ratio', 'uninspired, touch grass and catch this ratio',
     'nice ratio clown + check mine out + you just got Mr. Jums\'ed + sit kid + David made you + failed ratio + you\'re what zero pussy does to a mf',
 ]
 
 cogswell_ratio_list = [
     'ratio + go lick the dirt off the lounge floor', 'ratio + practice your scales nerd', 'ratio + Dr. Paul\'s Nike sponsorship owns you',
     'ratio + you fell off + zabadoobadabadeebadooba', 'L + ratio + air goes in + air goes out + nothing gets in the way of the air',
-    'L + ratio + you fell off + IUP Chorale went to Prague!?!?',
+    'L + ratio + you fell off + IUP Chorale went to Prague!?!?', 'go sit in a practice room and think about all your failures + ratio',
+    ''
 ]
 
 liz_ratios = [
     'L + ratio + dont care + didnt ask', 'L + ratio + dont care, didn\'t ask + go put ranch on spaghetti nerd', 'L + ratio + who asked again + okay show choir kid',
     'L + ratio + nobody cares + go sit on the toilet for 30 minutes + ur mom', 'L + ratio + dont care + didnt ask + where\'d your upper lip go?',
     'L + ratio + I didn\'t ask + go switch your major to Music Ed already', 'L + ratio + I don\'t care + you can\'t even cook rice + enjoy ranch yet today?',
-    'L + ratio + okay nerd + Noah doesn\'t have a Tacoma why are you dating him?', 'L + ratio + didnt ask + how many men that you\'ve slept with wore cowboy boots again???',
-    'L + ratio + you fell off + go get medicated for your crippling depression and undiagnosed ADHD already', 'Ratio + nobody cares + Elizabeth St. Nicholas Muchesko + you have the taste buds of a child + yeehaw',
-    'ratio + dont care, didnt ask + monthly tweet of hating being female + you pronounce Charleroi wrong', 'L + ratio + nobody asked + Elden Ring owns you + nice IBS where did you get it + not based + not redpilled',
+    'L + ratio + okay nerd + Noah doesn\'t have a Tacoma why are you dating him?', 'Ratio + you fall asleep to ASMR + I certainly did not ask',
+    'gonna ratio so hard you\'ll need to tell your therapist', 'Elizabeth St. Nicholas Nicole Muchesko, who asked?', 'Shouldn\'t you be pooping yourself or something',
+    'ratio + dont care, didnt ask + monthly tweet of hating being female + you pronounce Charleroi wrong', 'Are you pooping?', 'How many times have you pooped again today?',
+    '2 years.', 'Not based + not redpilled + didn\'t ask', 'Touch grass + eat ass + Breasts. + ratio nerd'
 ]
 
 flerb = [

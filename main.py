@@ -37,6 +37,7 @@ class Stalker(tweepy.Stream):
         print('\n...:::Stalker activated:::...')
         print(ricardo)
 
+
     def on_connection_error(self):
         '''
         Collects timestamp to measure downtime
@@ -51,6 +52,7 @@ class Stalker(tweepy.Stream):
         
         print('Ratiobot connection error. Timestamp stored.')
 
+
     def on_status(self, status):
         '''
         Collects tweet status from indicated users and immediately records them to tweets.txt
@@ -60,79 +62,61 @@ class Stalker(tweepy.Stream):
         # will @ the RTer with an empty tweet unless caught
         if status.text.startswith('RT'):
             return "Repeat after me: I will not ratio RTs"
-        # ensures the bot doesn't mindlessly ratio everyone, including itself
-        # also catches tweets of other users, writes tweets to a txt file
-        # for the purpose collecting larger data samples for SIA
-        if str(status.user.id) not in ratio_users and str(status.user.id) != '1494375567218679811':
 
-            if status.truncated == True:
-                try:
-                    with open('sentiment_module/tweets.txt', 'a', encoding='UTF-8') as f:
+        # on status received, writes tweet to sentiment_module/tweets.txt
+        # I had previously structured this in a stupid series of if/else statements
+        # when I really didn't need to, what can I say, I get paid by each line of code written
+        with open('sentiment_module/tweets.txt', 'a', encoding='UTF-8') as f:
+
+            try:
+                if status.truncated == True:
                         f.write(status.extended_tweet['full_text'] + '\n')
-                        print(f'::: :::: :::: :::: :::: :::\nNon-ratio\'d tweet caught and written for SIA by user: {status.user.screen_name}')
+                        print(f'::: :::: :::: :::: :::: :::\nTweet written to sentiment_module/tweets.txt for sentiment analysis by:\n{status.user.screen_name}')
                         time.sleep(0.6)
                         print('::: :::: :::: :::: :::: :::\n', status.created_at, '\n', status.extended_tweet['full_text'])
                         f.close()
-                except Exception as e:
-                    print('non-ratio\'d tweet caught, but error from text writer:')
-                    print(e)
-            else:
-                try:
-                    with open('sentiment_module/tweets.txt', 'a', encoding='UTF-8') as f:
-                        f.write(status.text + '\n')
-                        print(f'::: :::: :::: :::: :::: :::\nNon-ratio\'d tweet caught and written for SIA by user: {status.user.screen_name}')
-                        time.sleep(0.6)
-                        print('::: :::: :::: :::: :::: :::\n', status.created_at, '\n', status.text)
-                        f.close()
-                except Exception as e:
-                    print('non-ratio\'d tweet caught, but error from text writer:')
-                    print(e)                
-
-
-        else:
-
-            if status.truncated == True:
-                try:
-                    print(f'::: :::: :::: :::: :::: :::\nTweet from {status.user.screen_name} received:')
-                    time.sleep(0.6)
-                    print('::: :::: :::: :::: :::: :::\n', status.created_at, '\n', status.extended_tweet['full_text'])
-                    time.sleep(0.2)
-                    print('. . . . . .')
-                    time.sleep(0.5)
-
-                    with open('sentiment_module/tweets.txt', 'a', encoding='UTF-8') as f:
-                        f.write(status.extended_tweet['full_text'] + '\n')
-                        print('tweet written')
-                        f.close()
-    
-                except Exception as e:
-                        print('Error from text writer:')
-                        print(e)
-            else:
-                try:
-                    print(f'::: :::: :::: :::: :::: :::\nTweet from {status.user.screen_name} received:')
+                
+                else:
+                    f.write(status.text + '\n')
+                    print(f'::: :::: :::: :::: :::: :::\nTweet written to sentiment_module/tweets.txt for sentiment analysis by:\n{status.user.screen_name}')
                     time.sleep(0.6)
                     print('::: :::: :::: :::: :::: :::\n', status.created_at, '\n', status.text)
-                    time.sleep(0.2)
-                    print('. . . . . .')
-                    time.sleep(0.5)
+                    f.close()
 
-                    try:
-                        with open('sentiment_module/tweets.txt', 'a', encoding='UTF-8') as f:
-                            f.write(status.text + '\n')
-                            print('tweet written')
-                            f.close()
-                    except Exception as e:
-                        print('Error from text writer:')
-                        print(e)                
+            except Exception as e:
+                print('Error with tweet writing to sentiment_module/tweets.txt:')
+                print(e)
 
+                # close /tweets.txt in the event of error
+                f.close()
+        
+        if str(status.user.id) in ratio_users:
+
+            try:
+                # standard functions that do not require RNG adjustment go here
+                # this would be the palette generator function or !remindme function
+                # some forms of ratios also go here since their condition of happening is so incredibly rare to begin with
+                if 'palette' in status.text.lower() and 'color' in status.text.lower() and any(word in status.text.lower() for word in ratio_bot_keywords):
+                    print('attempting to generate a palette...')
+                    # generate_function()
+                    time.sleep(1)
+                    print('We pogging\n')
+
+                elif status.text.startswith('Wordle'):
+                    print('Attempting Wordle ratio. . .')
+                    rand = random.SystemRandom().randint(0,9)
+                    ratio = api.update_status(f'{wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
+                    api.create_favorite(ratio.id)
+                    time.sleep(1)
+                    print(f'wordle ratio sent  ::  {ratio.text}\n')
+                
+
+                else:
                     # my bot is really fucking annoying
-                    # make it less (or more) annoying here:
-                    # currently set at: 100% ratio percentage
+                    # make it less (or more) annoying here:          
                     legit_RNG = random.SystemRandom().randint(1,100)
                     print('RNG:', legit_RNG)
-                    
-                    # ratio begins within this if branch
+
                     if legit_RNG <= 80:
                         print('Ratio will begin')
                         time.sleep(2)
@@ -144,22 +128,8 @@ class Stalker(tweepy.Stream):
     #------------------------------------------------------------------BOT RESPONSES------------------------------------------------------------------#
                         # high proriety functions or features
                         # will execute regardless of other keywords said
-                        if 'palette' in status.text.lower() and 'color' in status.text.lower() and any(word in status.text.lower() for word in ratio_bot_keywords):
-                            print('attempting to generate a palette...')
-                            # generate_function()
-                            time.sleep(1)
-                            print('We pogging\n')
-                        # various one-off customized responses, highly specific
-                        # high priority tweets or ratios
-                        if status.text.startswith('Wordle'):
-                            print('Attempting Wordle ratio. . .')
-                            rand = random.SystemRandom().randint(0,9)
-                            ratio = api.update_status(f'{wordle_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
-                            api.create_favorite(ratio.id)
-                            time.sleep(1)
-                            print(f'wordle ratio sent  ::  {ratio.text}\n')
                         
-                        elif 'fortnite' in status.text.lower():
+                        if 'fortnite' in status.text.lower():
                             print('Attempting fortnite. . .')
                             fortnite = api.update_status(
                                 'We got a number one Victory Royale\nYeah, Fortnite, we \'bout to get down (get down)\nTen kills on the board right now\nJust wiped out Tomato Town', 
@@ -183,7 +153,7 @@ class Stalker(tweepy.Stream):
                         # medium priority tweets or ratios, more broad conditional set
                         elif any(word in status.text.lower() for word in ratio_bot_keywords):
                             print('Beetlejuice Beetlejuice Beetlejuice')
-                            rand = random.SystemRandom().randint(0,5)
+                            rand = random.SystemRandom().randint(0,14)
                             ratio = api.update_status(f'{say_my_name[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                             api.create_favorite(ratio.id)
                             time.sleep(1)
@@ -191,7 +161,7 @@ class Stalker(tweepy.Stream):
 
                         elif any(word in status.text.lower() for word in luke_keywords):
                             print('Attempting Luke. . .')
-                            lucas_deist = r'\photos\luke_deist.jpg'
+                            lucas_deist = r'/photos/luke_deist.jpg'
                             api.update_status_with_media(status='luuuuuuuuke', filename=lucas_deist, in_reply_to_status_id=status.id)
                             api.create_favorite(lucas_deist.id)
                             time.sleep(1)
@@ -207,7 +177,7 @@ class Stalker(tweepy.Stream):
 
                         elif any(word in status.text.lower() for word in ratio_keywords):
                             print('Attempting ratio ratio. . .')
-                            rand = random.SystemRandom().randint(0,5)
+                            rand = random.SystemRandom().randint(0,6)
                             ratio = api.update_status(f'{ratio_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                             api.create_favorite(ratio.id)
                             time.sleep(1)
@@ -215,7 +185,7 @@ class Stalker(tweepy.Stream):
 
                         elif any(word in status.text.lower() for word in cogswell_keywords):
                             print('Attempting Cogswell Ratio. . .')
-                            rand = random.SystemRandom().randint(0,5)
+                            rand = random.SystemRandom().randint(0,7)
                             api.update_status(f'{cogswell_ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                             api.create_favorite(ratio.id)
                             time.sleep(1)
@@ -238,7 +208,7 @@ class Stalker(tweepy.Stream):
                             # 1/3 chance of specialized liz ratio
                             if liz_RNG <= 2:
                                 print('Attempting liz ratio. . .')
-                                rand = random.SystemRandom().randint(0,12)
+                                rand = random.SystemRandom().randint(0,17)
                                 ratio = api.update_status(f'{liz_ratios[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                                 api.create_favorite(ratio.id)
                                 time.sleep(1)
@@ -258,7 +228,7 @@ class Stalker(tweepy.Stream):
                             # standard ratio has to be created here due to the elif conditions
                             # maybe functions would simplify this but oh well (laughs in Ctrl + C, Ctrl + V)
                             else:
-                                rand = random.SystemRandom().randint(0,27)
+                                rand = random.SystemRandom().randint(0,32)
                                 ratio = api.update_status(f'{ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                                 api.create_favorite(ratio.id)
                                 time.sleep(1)
@@ -283,7 +253,7 @@ class Stalker(tweepy.Stream):
                         # standard ratio is used after all these checks are put in place
                         else:
                             print('Attempting standard ratio. . .')
-                            rand = random.SystemRandom().randint(0,27)
+                            rand = random.SystemRandom().randint(0,32)
                             ratio = api.update_status(f'{ratio_list[rand]}', in_reply_to_status_id=status.id, auto_populate_reply_metadata=True)
                             api.create_favorite(ratio.id)
                             time.sleep(1)
@@ -296,8 +266,9 @@ class Stalker(tweepy.Stream):
                         print('The students of Cogswell are spared, for now...')
 
 
-                except Exception as e:
-                    print('yo you suck at writing code:', e)
+            except Exception as e:
+                print('yo you suck at writing code:', e)
+
 
 def main():
     matninus_listener = Stalker(
@@ -310,7 +281,13 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+    try:
+        main()
+        print('Ratio bot main funcationality online')
+
+    except Exception as e:
+        print('Ratio failed to load')
 
     # simple module loading
     # some modules just get too damn annoying
@@ -318,7 +295,7 @@ if __name__ == '__main__':
     daily_weather = True
     palette_generator = True
 
-    time.sleep(5)
+    time.sleep(3)
 
     # loads selected modules
     if grade_tweets == True:
@@ -331,7 +308,7 @@ if __name__ == '__main__':
         except Exception as e:
             sentiment_online = False
 
-            time.sleep(2)
+            time.sleep(1)
         
     if daily_weather == True:
         try:
@@ -343,15 +320,15 @@ if __name__ == '__main__':
         except Exception as e:
             weather_online = False
 
-            time.sleep(2)
+            time.sleep(1)
         
     # if palette_generator == True:
     #     try:
     #         Thread(target = palette_module.)
     
-    time.sleep(4)
+    time.sleep(2)
     if sentiment_online == True and weather_online == True:
-        print('All modules loaded successfully, ratiobot is online')
+        print('All modules loaded successfully')
     
     elif sentiment_online == False:
         print('Ratiobot launched, but the sentiment analysis failed to load. . .')

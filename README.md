@@ -41,22 +41,13 @@ the line, but as it currently stands I'm keeping the model in my back pocket for
 
 ---
 
-## Ratio Bot 1.2.9
+## Ratio Bot 1.2.11
 
-  - Fixed tweets crashing and breaking functionality longterm (most of them anyway)
-  - Fixed encoding error prohibiting some tweet from being recorded and sentiment analysis from occuring. All tweets should now be recorded successfully.
-  - Now catches truncated tweets and pulls the 'extended_tweet' json for full tweet viewing
-  - Added some spaghetti, will clean up at a later date
-  - On the other side of the coin, cleaned up some other spaghetti 
-
----
-
-### Ratio Bot 1.2.10
-
-#### Purely a project organizational update
-
-  - Moved user ID lists to it's own python file with an updated .gitignore
-  - Added dependencies in requirements.txt
+  - Refactored code to be less redundant + more organized
+  - Some new ratios added for more variety
+  - On occassion ratiobot would ratio a harmless bystander. This should now be fixed.
+  - Ratiobot began an endless ratio loop on himself until RNG decided to end it. This has now been fixed.
+  - Staged an organizational change to prepare for the 1.3 update.
 
 ---
 
